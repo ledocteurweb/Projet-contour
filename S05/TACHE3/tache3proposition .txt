@@ -1,0 +1,9 @@
+Je propose une structure basé sur un tableau a taille variable definition de la struture 
+typedef strct contour_Point{
+    int taille;
+    Point *tab;
+}Contour;
+
+L'intialisation du type se fer en lui allouant de l'eespace mémoire aves la taille 
+La taille sera soit le produit de la longeur et de la hauteur de l'image dont on veux les contours sinon 
+elle sera le  nombre de carré noir du polygone multiplié par 4
