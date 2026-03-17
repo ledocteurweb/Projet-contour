@@ -1,0 +1,28 @@
+Cas ou le point Q projection de P se trouve a l'intérieur du segment 
+P(1,2)   A(0,0)   B(3,4)
+P(2,1)   A(0,0)   B(4,0)
+P(2,3)   A(0,0)   B(0,5)
+Cas ou le point Q se trouve avant le point A
+P(-1,0)  A(0,0)   B(3,4)
+P(-2,1)  A(0,0)   B(4,0)
+P(0,-3)  A(0,0)   B(0,5)
+Cas ou le point Q se trouve après le point B
+P(0,7)   A(0,0)   B(0,5)
+P(3,3)   A(0,0)   B(2,2)
+P(5,5)   A(-2,-2) B(2,2)
+Cas ou A=B
+P(0,0)   A(3,4)   B(3,4)
+P(-1,5)  A(-2,-2) B(-2,-2)
+Cas ou P se trouve sur le segment 
+P(1.5,2) A(0,0)   B(3,4)
+P(2,0)   A(0,0)   B(4,0)
+P(0,3)   A(0,0)   B(0,5)
+Cas ou A=P ou P=B
+P(-2,0)  A(-2,0)  B(0,2)
+P(0,2)   A(-2,0)  B(0,2)
+Sur des valeurs decimales
+P(0.5758,1.301)   A(0.214,0.11111)   B(2.700000,3.01009)
+P(-1.0744,2.40)  A(-3.02,1.111101)  B(0.500044,4.8)
+Cas sur des grandes valeurs 
+P(1000000,1000000)   A(0,0)       B(500000,500000)
+P(-1000000,500000)   A(-500000,0) B(500000,0)

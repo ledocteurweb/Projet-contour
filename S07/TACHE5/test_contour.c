@@ -9,7 +9,9 @@ int main(int argc, char *argv[]){
 
     I=lire_fichier_image(argv[1]);
 
-    ecrire_fill_eps(I,&L);
+    calcul_contour_2(I,&L);
+
+    ecrire_contour(L);
 
     return 0;
 }

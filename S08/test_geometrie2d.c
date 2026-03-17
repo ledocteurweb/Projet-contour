@@ -2,39 +2,22 @@
 #include <stdio.h>
 int main()
 {
-
     // creons 2 points A et B
-    Point A, B, C, D;
-    A=set_point(4,5);
-    B=set_point(2,3);
+    Point A, B, P;
 
-    // point C=A+B
-    C=add_point(A,B);
+    printf("Vous aller entrer les coordonnées de 3 points P, A et B\nNous calculerons la distance entre le point P et le segment [A,B]");
+    printf("\n\nVeuillez entrer les coordonnee sous la forme abscisse ordonnée ");
+   
+    printf("\n\ncoordonnees de P ");
+    scanf("%lf %lf",&P.x,&P.y);
     
-    // point D = 3*C
-    D=mult_point(C,3);
+    printf("\n\ncoordonnees de A ");
+    scanf("%lf %lf",&A.x,&A.y);
+        
+    printf("\n\ncoordonnees de B ");
+    scanf("%lf %lf",&B.x,&B.y);
 
-    // distance entre A et B puis entre C et D
-    printf("la distance entre le point A et le point B est de %f et celle entre le point C et le point D est de %f \n",distance(A,B),distance(C,D));
-    
-    // creation des vecteurs AB et CD 
-    Vecteur V, V1, AB ,CD;
-    AB=vect_bipoint(A,B);
-
-    CD=vect_bipoint(C,D);
-
-    // addiction de vecteur 
-    V=add_vecteur(AB,CD);
-
-    // creation du vecteur V1=2*V
-    V1=mult_vect(V,2);
-
-    // produit scalaire 
-    printf("le produit scalaire entre AB et CD est de %f\n", scalaire(AB ,CD));
-
-    // norme
-
-    printf("La norme du vecteur AB est de %f \n", norme(V1));
+    printf("La distance entre le point P et le segment [A,B] est %lf \n",distance_point_segent(P,A,B));
 
     return 0;
 }

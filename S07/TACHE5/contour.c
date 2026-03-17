@@ -154,7 +154,7 @@ int est_pixel_noir(Image I){
     {
         for (UINT y = 1 ; y <= largeur; y++)
         {
-            if(get_pixel_image(I,x,y)==1)
+            if(get_pixel_image(I,y,x)==1)
                 return 1;
         }
     }
@@ -184,7 +184,10 @@ void calcul_contour_2(Image I,Liste_Point *L){
             memoriser_position(pos,L);
             avancer(&pos,o);
             nouvelle_orientation(I,pos,&o);
-            set_pixel_image(M,pos.x+1,pos.y+1,0);
+            if (o==Est)
+            {
+               set_pixel_image(M,pos.x+1,pos.y+1,0);
+            }
             if ((pos.x==x0 && pos.y==y0) && o==Est )
             {
                 boucle=1;
@@ -239,7 +242,10 @@ void ecrire_fill_eps(Image I,Liste_Point *L){
             fprintf(f,"%d %d lineto ", x,-y);
             avancer(&pos,o);
             nouvelle_orientation(I,pos,&o);
-            set_pixel_image(M,pos.x+1,pos.y+1,0);
+            if (o==Est)
+            {
+               set_pixel_image(M,pos.x+1,pos.y+1,0);
+            }
             if ((pos.x==x0 && pos.y==y0) && o==Est )
             {
                 boucle=1;
@@ -253,6 +259,6 @@ void ecrire_fill_eps(Image I,Liste_Point *L){
     fprintf(f, "showpage\n");
     fclose(f);
     nombre_de_segments=L->taille-nombre_de_contours;
-    printf("Il y'a %d contours et un total de %d segments\n", nombre_de_contours,L->taille,nombre_de_segments);
+    printf("Il y'a %d contours et un total de %d segments\n", nombre_de_contours,nombre_de_segments);
     supprimer_image(&M);
 }

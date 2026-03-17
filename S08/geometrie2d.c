@@ -44,3 +44,25 @@ double scalaire( Vecteur V1 , Vecteur V2 ){
 double norme( Vecteur V){
     return sqrt(V.x*V.x + V.y*V.y);
 }
+
+double distance_point_segent(Point P, Point A, Point B){
+    Vecteur vectab=vect_bipoint(A,B);
+    if (scalaire(vectab,vectab)==0)
+        return distance(A,P);
+    else
+    {
+        double lambda;
+        Vecteur vectap=vect_bipoint(A,P);
+        lambda=scalaire(vectap,vectab)/scalaire(vectab,vectab);
+        if (lambda < 0)
+            return distance(A,P);
+        else if (lambda>1)
+            return distance(B,P);
+        else
+        {
+            Point Q;
+            Q=add_point(A,mult_point(add_point(B,mult_point(A,-1)),lambda));
+            return distance(P,Q);
+        }
+    }  
+}
