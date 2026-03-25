@@ -160,7 +160,7 @@ int est_pixel_noir(Image I){
     }
     return 0;
 }
-void calcul_contour_2(Image I,Liste_Point *L){
+int calcul_contour_2(Image I,Liste_Point *L){
     Image M;
     int nombre_de_segments, nombre_de_contours, largeur,hauteur ;
     hauteur = hauteur_image(I);
@@ -199,6 +199,7 @@ void calcul_contour_2(Image I,Liste_Point *L){
     nombre_de_segments=L->taille-nombre_de_contours;
     printf("Il y'a %d contours et un total de %d points soit un total de %d segments\n", nombre_de_contours,L->taille,nombre_de_segments);
     supprimer_image(&M);
+    return nombre_de_contours;
 }
 
 

@@ -31,7 +31,7 @@ void trouver_pixel_candidat(Image I,Image M);
 
 int est_pixel_noir(Image I);
 
-void calcul_contour_2(Image I,Liste_Point *L);
+int calcul_contour_2(Image I,Liste_Point *L);
 
 void ecrire_fill_eps(Image I,Liste_Point *L);
 
